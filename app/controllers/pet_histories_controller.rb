@@ -11,12 +11,13 @@ class PetHistoriesController < ApplicationController
   # GET /pet_histories/1
   # GET /pet_histories/1.json
   def show
-  end
+    @pets = Pet.all
+  end 
 
   # GET /pet_histories/new
   def new
     @pet_history = PetHistory.new
-    @pets = Pet.pluck :name
+    @pets = Pet.all
   end
 
   # GET /pet_histories/1/edit
@@ -28,7 +29,7 @@ class PetHistoriesController < ApplicationController
   # POST /pet_histories.json
   def create
     @pet_history = PetHistory.new(pet_history_params)
-
+    @pets = Pet.all
     respond_to do |format|
       if @pet_history.save
         format.html { redirect_to @pet_history, notice: "Pet history was successfully created." }

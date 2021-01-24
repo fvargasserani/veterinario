@@ -12,7 +12,8 @@
   <% end %>
 
   <div class="field">
-    <select name="pet_history[name]">
+  <%= form.label :name %>
+    <select name="pet_history[id]">
       <% @pets.each do |pet| %>
         <option value="<%= pet.name %>"><%= pet.name %></option> 
       <% end %>

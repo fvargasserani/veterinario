@@ -6,19 +6,35 @@
 </p>
 
 <p>
-  <strong>Weight:</strong>
-  <%= @pet_history.weight %>
+  <strong>Breed:</strong>
+  <%= @pet.breed %>
 </p>
 
 <p>
-  <strong>Height:</strong>
-  <%= @pet_history.height %>
+  <strong>Birthdate:</strong>
+  <%= @pet.birthdate %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @pet_history.description %>
-</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Average weight</th>
+      <th>Average height</th>
+      <th>Maximum weight</th>
+      <th>Maximum height</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= @pet.avg_weight / @pet.history_count %></td>
+      <td><%= @pet.avg_height / @pet.history_count%></td>
+      <td><%= @pet.max_weight / @pet.history_count%></td>
+      <td><%= @pet.max_height / @pet.history_count%></td>
+    </tr>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_pet_path(@pet) %> |
 <%= link_to 'Back', pets_path %>

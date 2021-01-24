@@ -3,22 +3,23 @@ class Pet < ApplicationRecord
   accepts_nested_attributes_for :pet_histories
 
   def history_count
-    #TODO-implement
+    PetHistory.pluck(:id).count
   end
 
+
   def avg_weight
-    #TODO-implement
+    PetHistory.pluck(:weight).sum
   end
 
   def avg_height
-    #TODO-implement
+    PetHistory.pluck(:height).sum
   end
 
   def max_weight
-    #TODO-implement
+    PetHistory.pluck(:weight).max
   end
 
   def max_height
-    #TODO-implement
+    PetHistory.pluck(:height).max
   end
 end
