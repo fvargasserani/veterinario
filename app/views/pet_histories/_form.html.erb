@@ -12,7 +12,7 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.collection_select :pet_id, Pet.order('name'), :id, :name %>
+    <%= form.collection_select :pet_id, Pet.order(:name), :id, :name %>
   </div>
   
   <div class="field">
