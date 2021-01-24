@@ -2,7 +2,6 @@
   <% if pet_history.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(pet_history.errors.count, "error") %> prohibited this pet_history from being saved:</h2>
-
       <ul>
         <% pet_history.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -12,12 +11,8 @@
   <% end %>
 
   <div class="field">
-  <%= form.label :name %>
-    <select name="pet_history[id]">
-      <% @pets.each do |pet| %>
-        <option value="<%= pet.name %>"><%= pet.name %></option> 
-      <% end %>
-    </select>
+    <%= form.label :name %>
+    <%= form.collection_select :pet_id, Pet.order('name'), :id, :name %>
   </div>
   
   <div class="field">

@@ -5,7 +5,6 @@ class PetHistoriesController < ApplicationController
   # GET /pet_histories.json
   def index
     @pet_histories = PetHistory.all
-    @pets = Pet.all
   end
 
   # GET /pet_histories/1
@@ -29,7 +28,7 @@ class PetHistoriesController < ApplicationController
   # POST /pet_histories.json
   def create
     @pet_history = PetHistory.new(pet_history_params)
-    @pets = Pet.all
+
     respond_to do |format|
       if @pet_history.save
         format.html { redirect_to @pet_history, notice: "Pet history was successfully created." }
@@ -73,6 +72,6 @@ class PetHistoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pet_history_params
-      params.require(:pet_history).permit(:weight, :height, :description)
+      params.require(:pet_history).permit(:weight, :height, :description, :pet_id)
     end
 end
