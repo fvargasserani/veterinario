@@ -11,8 +11,11 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.collection_select :pet_id, Pet.order(:name), :id, :name %>
+    <select name="pet_history[pet_id]">
+    <% @pets.each do |pet| %>
+      <option value="<%= pet.id %>"><%= pet.name %></option> 
+    <% end %>
+    </select>
   </div>
   
   <div class="field">

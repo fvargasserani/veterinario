@@ -5,18 +5,18 @@ class PetsController < ApplicationController
   # GET /pets.json
   def index
     @pets = Pet.all
-    @pet = Pet.create
   end
 
   # GET /pets/1
   # GET /pets/1.json
   def show
-    @pet = Pet.find params[:id]
+    @pet = Pet.find( params[:id])
   end
 
   # GET /pets/new
   def new
     @pet = Pet.new
+    @pets = Pet.find params[:id]
   end
 
   # GET /pets/1/edit

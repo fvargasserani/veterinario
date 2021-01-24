@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_01_23_211242) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "pet_id", null: false
+    t.integer "pet_id"
     t.index ["pet_id"], name: "index_pet_histories_on_pet_id"
   end
 
