@@ -3,8 +3,6 @@ class Pet < ApplicationRecord
   belongs_to :client
   validates :name, :breed, :birthdate, presence: true
 
-  accepts_nested_attributes_for :pet_histories
-
   def history_count
     PetHistory.where(pet_id: id).pluck(:pet_id).count
   end
