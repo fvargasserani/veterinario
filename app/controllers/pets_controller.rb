@@ -16,7 +16,6 @@ class PetsController < ApplicationController
   # GET /pets/new
   def new
     @pet = Pet.new
-    @pets = Pet.find params[:id]
   end
 
   # GET /pets/1/edit

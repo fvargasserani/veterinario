@@ -1,5 +1,6 @@
 class Pet < ApplicationRecord
   has_many :pet_histories, dependent: :destroy
+  belongs_to :client
   validates :name, :breed, :birthdate, presence: true
 
   accepts_nested_attributes_for :pet_histories
