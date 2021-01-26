@@ -27,7 +27,7 @@
   </div>
 
   <div class="field">
-  <%= form.label :owner %>
+  <%= form.label :name %>
     <select name="pet[client_id]">
     <% @clients.each do |client| %>
       <option value="<%= client.id %>"><%= client.name %></option> 

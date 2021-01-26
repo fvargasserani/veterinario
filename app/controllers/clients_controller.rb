@@ -10,6 +10,7 @@ class ClientsController < ApplicationController
   # GET /clients/1
   # GET /clients/1.json
   def show
+    @pets = Pet.where(client_id: params[:id])
   end
 
   # GET /clients/new
@@ -69,6 +70,6 @@ class ClientsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def client_params
-      params.require(:client).permit(:name, :phone, :email)
+      params.require(:client).permit(:name, :phone, :email, :id)
     end
 end
